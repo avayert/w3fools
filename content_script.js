@@ -24,6 +24,7 @@
             }
         } catch (e) {
             if (!e instanceof TypeError) {
+                console.error(e);
             }
         }
     });
