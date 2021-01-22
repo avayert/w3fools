@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "w3fools",
+    "description": "Remove w3schools result from google search results",
+    "version": "1.0a",
+
+    "developer": {
+        "name": "avayert",
+        "url": "https://yert.pink"
+    },
+
+    "content_scripts": [
+        {
+            // wildcard TLDs are not allowed so I guess I'll support them as people request them.
+            "matches": ["*://*.google.com/*"],
+            "js": ["content_script.js"],
+            // Corresponds to interactive. The DOM has finished loading, but resources such as scripts and images may still be loading.
+            "run_at": "document_end"
+            // TODO: should all_frames be on?
+        }
+    ]
+}
